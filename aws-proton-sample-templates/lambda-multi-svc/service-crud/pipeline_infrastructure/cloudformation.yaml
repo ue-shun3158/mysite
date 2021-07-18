@@ -573,6 +573,17 @@ Resources:
           - Arn
       Stages:
         - Actions:
+            - Name: MyApprovalAction
+            - ActionTypeId:
+                Category: Approval
+                Owner: AWS
+                Version: "1"
+                Provider: Manual
+            - Configuration: 
+                NotificationArn: arn:aws:sns:ap-northeast-1:885453907585:Proton_Approval_Notification:86328b86-7bf6-40a3-a353-74b4e9991d84
+                CustomData: The latest changes include feedback from Test.
+            - RunOrder: 1
+        - Actions:
             - ActionTypeId:
                 Category: Source
                 Owner: AWS
