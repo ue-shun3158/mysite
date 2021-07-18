@@ -31,6 +31,13 @@ schema:
           default: "public.ecr.aws/z9d2n7e1/nginx:1.21.0"
           minLength: 1
           maxLength: 200
+        service_discovery_name:
+          type: string
+          description: "The name of the service to register in service discovery"
+          minLength: 3
+          maxLength: 24
+      required:
+        - service_discovery_name
 
     PipelineInputs:
       type: object
